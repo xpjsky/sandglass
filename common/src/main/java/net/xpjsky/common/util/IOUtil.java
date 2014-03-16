@@ -1,5 +1,6 @@
-package net.xpjsky.sandglass.common.util;
+package net.xpjsky.common.util;
 
+import java.io.Closeable;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -21,15 +22,17 @@ public class IOUtil {
         return 1;
     }
 
-    public static void closeQuietly(InputStream is) {
-
-    }
-
-    public static void closeQuietly(OutputStream os) {
-
-    }
-
-    public static void closeQuietly(InputStream is, OutputStream os) {
-
+    public static void closeQuietly(Closeable... cs) {
+        if (cs != null) {
+            for (Closeable c : cs) {
+                if (c != null) {
+                    try {
+                        c.close();
+                    } catch (IOException e) {
+                        // ignore
+                    }
+                }
+            }
+        }
     }
 }

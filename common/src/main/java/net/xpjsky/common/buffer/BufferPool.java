@@ -1,4 +1,4 @@
-package net.xpjsky.sandglass.common.buffer;
+package net.xpjsky.common.buffer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

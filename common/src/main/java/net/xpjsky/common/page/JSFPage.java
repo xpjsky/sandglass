@@ -1,4 +1,4 @@
-package net.xpjsky.sandglass.common.page;
+package net.xpjsky.common.page;
 
 import javax.faces.model.DataModel;
 

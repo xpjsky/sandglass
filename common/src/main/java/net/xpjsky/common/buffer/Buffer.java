@@ -1,4 +1,4 @@
-package net.xpjsky.sandglass.common.buffer;
+package net.xpjsky.common.buffer;
 
 import java.util.Date;
 

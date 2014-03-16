@@ -1,6 +1,6 @@
 package util;
 
-import net.xpjsky.sandglass.common.util.TimeWatch;
+import net.xpjsky.common.util.TimeWatch;
 import org.junit.Test;
 
 /**

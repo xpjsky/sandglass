@@ -1,4 +1,4 @@
-package net.xpjsky.sandglass.common.util;
+package net.xpjsky.common.util;
 
 /**
  * Description Here

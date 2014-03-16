@@ -1,4 +1,4 @@
-package net.xpjsky.sandglass.common.io;
+package net.xpjsky.common.io;
 
 import java.io.FilterOutputStream;
 import java.io.IOException;
@@ -10,19 +10,19 @@ import java.io.OutputStream;
  * @author paddy.xie
  * @version 10/19/12 5:43 PM
  */
-public class CheckedOutputStream extends FilterOutputStream {
+public class CheckedOutputStream extends FilterOutputStream implements CheckedStream {
 
-    private Checker observer;
+    private Checker checker;
 
-    public CheckedOutputStream(OutputStream out, Checker observer) {
+    public CheckedOutputStream(OutputStream out, Checker checker) {
         super(out);
-        this.observer = observer;
+        this.checker = checker;
     }
 
     @Override
     public void write(int b) throws IOException {
         super.write(b);
-        observer.update(b);
+        checker.update(b);
     }
 
     @Override
@@ -33,10 +33,10 @@ public class CheckedOutputStream extends FilterOutputStream {
     @Override
     public void write(byte[] b, int off, int len) throws IOException {
         super.write(b, off, len);
-        observer.update(b, 0, len);
+        checker.update(b, 0, len);
     }
 
-    public Checker getObserver() {
-        return observer;
+    public Checker getChecker() {
+        return checker;
     }
 }

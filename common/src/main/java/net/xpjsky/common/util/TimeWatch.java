@@ -1,4 +1,4 @@
-package net.xpjsky.sandglass.common.util;
+package net.xpjsky.common.util;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -25,7 +25,7 @@ public class TimeWatch {
         startPoint = System.currentTimeMillis();
         stopPoint = 0;
         index = 0;
-        checkPoints = new LinkedList<CheckPoint>();
+        watchPoints = new LinkedList<WatchPoint>();
 
         status = 1;
     }
@@ -37,7 +37,7 @@ public class TimeWatch {
     /* current check point index */
     private int index;
 
-    private List<CheckPoint> checkPoints;
+    private List<WatchPoint> watchPoints;
 
     /* the status of TimeWatch, 0 as  */
     private int status;
@@ -45,15 +45,15 @@ public class TimeWatch {
     public void check() {
         if (status != 1) return;
 
-        CheckPoint cp = new CheckPoint(index);
-        checkPoints.add(cp);
+        WatchPoint cp = new WatchPoint(index);
+        watchPoints.add(cp);
     }
 
     public void check(String name) {
         if (status != 1) return;
 
-        CheckPoint cp = new CheckPoint(index, name);
-        checkPoints.add(cp);
+        WatchPoint cp = new WatchPoint(index, name);
+        watchPoints.add(cp);
     }
 
     public void stop() {
@@ -69,20 +69,20 @@ public class TimeWatch {
 
     @Override
     public String toString() {
-        return "TimeWatch " + name + " with " + checkPoints.size() + " check points";
+        return "TimeWatch " + name + " with " + watchPoints.size() + " watch points";
     }
 
-    private static class CheckPoint {
+    private static class WatchPoint {
         String name;
         int index;
         long ms;
 
-        CheckPoint(int index) {
+        WatchPoint(int index) {
             this.index = index;
             this.name = "Checkpoint - " + index;
         }
 
-        CheckPoint(int index, String name) {
+        WatchPoint(int index, String name) {
             this.index = index;
             this.name = name;
         }

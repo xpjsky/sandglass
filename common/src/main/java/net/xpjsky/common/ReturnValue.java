@@ -1,4 +1,4 @@
-package net.xpjsky.sandglass.common;
+package net.xpjsky.common;
 
 import java.io.Serializable;
 
@@ -15,14 +15,14 @@ public final class ReturnValue implements Serializable {
 
     public ReturnValue(Serializable... values) {
         if (values == null) {
-            values = new Serializable[]{null};
+            values = new Serializable[0];
         }
 
         this.values = new Serializable[]{values};
     }
 
-    public Serializable[] get() {
-        return values;
+    public int length() {
+        return values.length;
     }
 
     @SuppressWarnings("unchecked")

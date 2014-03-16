@@ -1,6 +1,6 @@
-package net.xpjsky.sandglass.common.archive.dls;
+package net.xpjsky.common.archive.dls;
 
-import net.xpjsky.sandglass.common.archive.EntryFilter;
+import net.xpjsky.common.archive.EntryFilter;
 
 /**
  * Description Here

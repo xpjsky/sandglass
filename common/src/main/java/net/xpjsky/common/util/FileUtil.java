@@ -1,7 +1,6 @@
-package net.xpjsky.sandglass.common.util;
+package net.xpjsky.common.util;
 
-import java.io.File;
-import java.io.InputStream;
+import java.io.*;
 
 /**
  * Description Here
@@ -24,12 +23,36 @@ public final class FileUtil {
      *
      * @param file
      */
-    public static void createFile(File file) {
+    public static boolean createFile(File file) {
+        if(file.isDirectory()) {
+            return false;
+        }
 
+        if(file.isFile()) {
+            return true;
+        }
+        File parent;
+        try {
+            if((parent = file.getParentFile()) != null) {
+                return createDirectory(parent) && file.createNewFile();
+            } else {
+                return file.createNewFile();
+            }
+        } catch (IOException e) {
+            return file.exists();
+        }
     }
 
-    public static void createDirectory(File file) {
+    public static boolean createDirectory(File file) {
+        if(file.isDirectory()) {
+            return true;
+        }
 
+        if(file.isFile()) {
+            return false;
+        }
+
+        return file.mkdirs();
     }
 
     public static boolean rename(File file, String newName) {
@@ -57,31 +80,31 @@ public final class FileUtil {
         return source.renameTo(target);
     }
 
-    public static void delete(File file) {
-        if (file.isFile()) {
-            file.delete();
-        } else if (file.isDirectory()) {
-            File[] files = file.listFiles();
-            if (files == null) return;
+    public static boolean delete(File file) {
+        boolean cleaned = clean(file);
 
-            for (File f : files) {
-                delete(f);
-            }
-            file.delete();
-        }
+        return cleaned && file.delete();
     }
 
-    public static void clean(File file) {
+    public static boolean clean(File file) {
         if (file.isFile()) {
-            file.delete();
-            return;
-        } else if (file.isDirectory()) {
+            return file.delete();
+        } else {
             File[] files = file.listFiles();
-            if (files == null) return;
+            if (files == null) return true;
 
+            boolean cleaned = true;
             for (File f : files) {
-                delete(f);
+                // if f is directory, then clean the directory firstly, then delete the directory
+                if(f.isDirectory()) {
+                    cleaned = clean(f) && f.delete() && cleaned;
+                }
+                // if f is file, delete it directly
+                else {
+                    cleaned = f.delete() && cleaned;
+                }
             }
+            return cleaned;
         }
     }
 
@@ -101,5 +124,13 @@ public final class FileUtil {
 
     }
 
+    public static FilenameFilter endsWithFilter(final String charSeq) {
+        return new FilenameFilter() {
+            @Override
+            public boolean accept(File dir, String name) {
+                return name.endsWith(charSeq);
+            }
+        };
+    }
 
 }

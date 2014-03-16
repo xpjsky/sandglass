@@ -1,4 +1,4 @@
-package net.xpjsky.sandglass.common.util;
+package net.xpjsky.common.util;
 
 import java.util.Calendar;
 import java.util.Date;

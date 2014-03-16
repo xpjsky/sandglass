@@ -1,4 +1,4 @@
-package net.xpjsky.sandglass.common.archive;
+package net.xpjsky.common.archive;
 
 /**
  * Description Here

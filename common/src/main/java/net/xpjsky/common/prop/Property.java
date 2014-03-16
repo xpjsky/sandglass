@@ -1,4 +1,4 @@
-package net.xpjsky.sandglass.common.prop;
+package net.xpjsky.common.prop;
 
 import java.lang.reflect.Array;
 import java.util.List;

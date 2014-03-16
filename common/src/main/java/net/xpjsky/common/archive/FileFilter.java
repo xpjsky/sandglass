@@ -1,15 +1,11 @@
-package net.xpjsky.sandglass.common.archive;
-
-import java.io.File;
+package net.xpjsky.common.archive;
 
 /**
- * Description Here
+ * just provide a File filter at the same package with Entry filter
  *
  * @author paddy.xie
  * @version 9/25/12 5:06 PM
  */
-public interface FileFilter {
-
-    public boolean accept(File file);
+public interface FileFilter extends java.io.FileFilter {
 
 }

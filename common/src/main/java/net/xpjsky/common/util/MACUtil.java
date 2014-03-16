@@ -1,7 +1,7 @@
-package net.xpjsky.sandglass.common.util;
+package net.xpjsky.common.util;
 
-import net.xpjsky.sandglass.common.buffer.Buffer;
-import net.xpjsky.sandglass.common.buffer.BufferPool;
+import net.xpjsky.common.buffer.Buffer;
+import net.xpjsky.common.buffer.BufferPool;
 import org.bouncycastle.util.encoders.Base64;
 
 import javax.crypto.Mac;

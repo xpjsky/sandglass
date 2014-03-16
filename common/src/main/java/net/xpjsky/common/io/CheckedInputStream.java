@@ -1,4 +1,4 @@
-package net.xpjsky.sandglass.common.io;
+package net.xpjsky.common.io;
 
 import java.io.FilterInputStream;
 import java.io.IOException;
@@ -10,7 +10,7 @@ import java.io.InputStream;
  * @author paddy.xie
  * @version 10/19/12 5:36 PM
  */
-public class CheckedInputStream extends FilterInputStream {
+public class CheckedInputStream extends FilterInputStream implements CheckedStream {
 
     private Checker checker;
 

@@ -1,8 +1,8 @@
-package net.xpjsky.sandglass.common.io;
+package net.xpjsky.common.io;
 
 
-import net.xpjsky.sandglass.common.util.HexUtil;
-import net.xpjsky.sandglass.common.util.MACUtil;
+import net.xpjsky.common.util.HexUtil;
+import net.xpjsky.common.util.MACUtil;
 
 import javax.crypto.Mac;
 

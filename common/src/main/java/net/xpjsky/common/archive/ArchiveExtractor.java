@@ -1,9 +1,9 @@
-package net.xpjsky.sandglass.common.archive;
+package net.xpjsky.common.archive;
 
-import net.xpjsky.sandglass.common.archive.dls.BeforeFinish;
-import net.xpjsky.sandglass.common.archive.dls.Extract;
-import net.xpjsky.sandglass.common.archive.dls.Extractor;
-import net.xpjsky.sandglass.common.archive.dls.Finish;
+import net.xpjsky.common.archive.dls.BeforeFinish;
+import net.xpjsky.common.archive.dls.Extract;
+import net.xpjsky.common.archive.dls.Extractor;
+import net.xpjsky.common.archive.dls.Finish;
 
 import org.apache.commons.compress.archivers.ArchiveEntry;
 import org.apache.commons.compress.archivers.ArchiveInputStream;

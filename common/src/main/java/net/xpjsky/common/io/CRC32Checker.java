@@ -1,4 +1,4 @@
-package net.xpjsky.sandglass.common.io;
+package net.xpjsky.common.io;
 
 import java.util.zip.CRC32;
 

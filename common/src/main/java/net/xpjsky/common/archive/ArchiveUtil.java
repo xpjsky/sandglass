@@ -1,7 +1,7 @@
-package net.xpjsky.sandglass.common.archive;
+package net.xpjsky.common.archive;
 
-import net.xpjsky.sandglass.common.buffer.Buffer;
-import net.xpjsky.sandglass.common.buffer.BufferPool;
+import net.xpjsky.common.buffer.Buffer;
+import net.xpjsky.common.buffer.BufferPool;
 import org.apache.commons.compress.archivers.ArchiveEntry;
 import org.apache.commons.compress.archivers.ArchiveOutputStream;
 import org.apache.commons.compress.compressors.bzip2.BZip2CompressorInputStream;
